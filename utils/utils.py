@@ -92,7 +92,7 @@ def get_gt_orth(D, r, y, eta_up, n):
 def get_lda(D, n, m, r, singular_vals=None, C_max = None):
     #Input C_max controls the scaling constant.
     #  If C_max = None, compute C_max based on theory (Prop 2)
-    #  If C_max = (some const), just use C_max, ignore theory
+    #  If C_max = (some const), use C_max
     if not C_max:
         kappa_0 = 4
         v_1 = 40*kappa_0**2
@@ -275,4 +275,3 @@ def plot_exp_m(norm_err_sweep, m_v, params, filename, err_bar = 'std_err'):
         plt.gcf().set_size_inches(28, 21)
         plt.savefig(filename + plot_scale_str + '.jpg', bbox_inches='tight', dpi=300)
         plt.close()
-        #plt.show()
